@@ -32,12 +32,15 @@ The system will also store newly discovered questions so they can be reused by o
 React.js
 Tailwind CSS
 React Router
+
 🖥 Backend
 Node.js
 Express.js
+
 🗄 Database
 MongoDB
 Mongoose
+
 🤖 AI Integration (Planned)
 Google Gemini API
 🔄 Automation (Planned)
