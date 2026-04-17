@@ -2,6 +2,7 @@
 
 A full-stack web platform designed to help students prepare for placement aptitude tests through structured practice, company-based questions, and AI-assisted learning tools.
 
+
 📌 Problem Statement
 
 Many students preparing for campus placements face difficulties in finding organized aptitude preparation resources.
@@ -17,6 +18,7 @@ Common challenges include:
 📊 No proper tools to analyze performance and identify weak areas
 
 This project aims to solve these problems by creating a centralized aptitude preparation platform.
+
 
 💡 Solution
 
@@ -34,6 +36,7 @@ This platform will provide an interactive aptitude practice environment where st
 
 The system will also store newly discovered questions so they can be reused by other students in future tests.
 
+
 ⚙️ Tech Stack
 🎨 Frontend
 
@@ -43,17 +46,20 @@ Tailwind CSS
 
 React Router
 
+
 🖥 Backend
 
 Node.js
 
 Express.js
 
+
 🗄 Database
 
 MongoDB
 
 Mongoose
+
 
 🤖 AI Integration (Planned)
 
