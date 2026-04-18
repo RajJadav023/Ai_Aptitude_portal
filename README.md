@@ -1,16 +1,76 @@
-# React + Vite
+🚀 AI Powered Aptitude Preparation Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web platform designed to help students prepare for placement aptitude tests through structured practice, company-based questions, and AI-assisted learning tools.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+📌 Problem Statement
 
-## React Compiler
+Many students preparing for campus placements face difficulties in finding organized aptitude preparation resources.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Common challenges include:
 
-## Expanding the ESLint configuration
+📚 Previous company aptitude questions are scattered across multiple websites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🧠 Students cannot easily practice topic-wise aptitude tests
+
+❓ Lack of systems that generate new questions similar to real placement exams
+
+📊 No proper tools to analyze performance and identify weak areas
+
+This project aims to solve these problems by creating a centralized aptitude preparation platform.
+
+
+💡 Solution
+
+This platform will provide an interactive aptitude practice environment where students can:
+
+📝 Practice topic-based aptitude questions
+
+🏢 Solve company-specific previous placement questions
+
+⏱ Take mock tests with timers
+
+📊 View detailed result analytics
+
+📂 Upload aptitude papers for AI-based analysis
+
+The system will also store newly discovered questions so they can be reused by other students in future tests.
+
+
+⚙️ Tech Stack
+🎨 Frontend
+
+React.js
+
+Tailwind CSS
+
+React Router
+
+
+🖥 Backend
+
+Node.js
+
+Express.js
+
+
+🗄 Database
+
+MongoDB
+
+Mongoose
+
+
+🤖 AI Integration (Planned)
+
+Google Gemini API
+
+🔄 Automation (Planned)
+
+n8n workflows
+
+📄 File Processing (Future Phase)
+
+pdf-parse
+
+tesseract.js
