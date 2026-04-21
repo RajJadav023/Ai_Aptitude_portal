@@ -141,6 +141,7 @@ const TestEngine = () => {
             const res = await api.post('/tests/submit', payload);
             localStorage.removeItem('aptitude_active_test');
             navigate(`/result/${res.data._id}`, {
+                replace: true,
                 state: {
                     result: res.data,
                     questions: questions,

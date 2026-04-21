@@ -1,5 +1,7 @@
 # Backend
-backend/
+backend/node_modules/
+backend/.env
+backend/uploads/
 
 # Node modules
 node_modules/

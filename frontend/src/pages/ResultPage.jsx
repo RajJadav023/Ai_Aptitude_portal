@@ -189,7 +189,7 @@ const ResultPage = () => {
                                 <span className="font-bold">Home</span>
                                 <Home className="w-4 h-4 text-blue-400" />
                             </button>
-                            <button onClick={() => navigate(-1)} className="w-full flex items-center justify-between p-4 rounded-2xl bg-white/5 hover:bg-indigo-600/10 border border-white/5 hover:border-indigo-500/30 transition-all">
+                            <button onClick={() => navigate('/dashboard')} className="w-full flex items-center justify-between p-4 rounded-2xl bg-white/5 hover:bg-indigo-600/10 border border-white/5 hover:border-indigo-500/30 transition-all">
                                 <span className="font-bold">Retake Mock</span>
                                 <RotateCcw className="w-4 h-4 text-indigo-400" />
                             </button>
