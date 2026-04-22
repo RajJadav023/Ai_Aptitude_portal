@@ -23,17 +23,28 @@ exports.uploadFile = async (req, res) => {
         } else if (['.jpg', '.jpeg', '.png'].includes(fileExtension)) {
             const { data: { text } } = await Tesseract.recognize(filePath, 'eng');
             extractedText = text;
+        } else if (fileExtension === '.txt') {
+            extractedText = fs.readFileSync(filePath, 'utf8');
         } else {
             return res.status(400).json({ msg: 'Unsupported file type' });
         }
 
         // Clean up the uploaded file after processing
-        fs.unlinkSync(filePath);
+        if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+
+        if (!extractedText || extractedText.trim().length < 10) {
+            return res.status(400).json({ 
+                msg: 'No readable text found in the file. Please ensure the file is not empty and the text is clear.' 
+            });
+        }
 
         res.json({ text: extractedText });
     } catch (err) {
-        console.error(err);
+        console.error("Upload/OCR Error:", err);
         if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
-        res.status(500).send('Failed to extract text from file');
+        res.status(500).json({ 
+            msg: `Failed to extract text: ${err.message || 'Unknown OCR error'}`,
+            error: err.toString()
+        });
     }
 };

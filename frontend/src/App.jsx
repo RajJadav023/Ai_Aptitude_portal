@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import TestEngine from './pages/TestEngine';
 import ResultPage from './pages/ResultPage';
 import UploadPaper from './pages/UploadPaper';
+import CompanyMockGenerator from './pages/CompanyMockGenerator';
 import { Loader2 } from 'lucide-react';
 
 // Protected Route Component
@@ -66,6 +67,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <UploadPaper />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/company-mock"
+            element={
+              <ProtectedRoute>
+                <CompanyMockGenerator />
               </ProtectedRoute>
             }
           />

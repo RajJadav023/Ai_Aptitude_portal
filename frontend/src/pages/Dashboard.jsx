@@ -193,17 +193,20 @@ const Dashboard = () => {
                                     <div className="w-16 h-16 rounded-3xl bg-blue-600/20 border border-blue-500/20 flex items-center justify-center mb-8">
                                         <BrainCircuit className="w-8 h-8 text-blue-400" />
                                     </div>
-                                    <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest border border-blue-500/20">Coming Soon</span>
-                                    <h2 className="text-4xl font-black text-white mt-4 mb-4">Generate AI-Powered Mock</h2>
+                                    <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest border border-blue-500/20">Active Now</span>
+                                    <h2 className="text-4xl font-black text-white mt-4 mb-4">AI Company Mock Generator</h2>
                                     <p className="text-slate-400 max-w-xl text-lg mb-10 leading-relaxed">
-                                        Let our AI create a unique test tailored to your level. We use advanced prompt engineering
-                                        to generate fresh questions similar to real company exams.
+                                        Upload old placement papers and let our AI extract patterns and generate missing questions 
+                                        to create a perfectly tailored company-specific mock test.
                                     </p>
-                                    <button className="px-10 py-5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-black text-lg transition-all shadow-xl shadow-blue-500/30 flex items-center gap-3">
-                                        Configure AI Mock <ChevronRight className="w-6 h-6" />
+                                    <button 
+                                        onClick={() => navigate('/company-mock')}
+                                        className="px-10 py-5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-black text-lg transition-all shadow-xl shadow-blue-500/30 flex items-center gap-3 active:scale-95"
+                                    >
+                                        Launch AI Mock Engine <ChevronRight className="w-6 h-6" />
                                     </button>
                                 </div>
-                                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full" />
+                                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
                             </div>
                         </div>
                     )}

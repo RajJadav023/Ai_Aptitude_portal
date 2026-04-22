@@ -9,4 +9,7 @@ router.post('/submit', authMiddleware, testController.submitTest);
 // @route   GET api/tests/history
 router.get('/history', authMiddleware, testController.getHistory);
 
+// @route   GET api/tests/:id
+router.get('/:id', authMiddleware, testController.getTestById);
+
 module.exports = router;

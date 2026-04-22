@@ -89,3 +89,27 @@ exports.getHistory = async (req, res) => {
         res.status(500).send('Server error');
     }
 };
+// @route   GET api/tests/:id
+// @desc    Get test by ID and populate questions
+exports.getTestById = async (req, res) => {
+    try {
+        const test = await Test.findById(req.params.id).populate('questions_list');
+        
+        if (!test) {
+            return res.status(404).json({ msg: 'Test not found' });
+        }
+
+        // Check if test belongs to user
+        if (test.user_id.toString() !== req.user.id) {
+            return res.status(401).json({ msg: 'User not authorized' });
+        }
+
+        res.json(test);
+    } catch (err) {
+        console.error(err.message);
+        if (err.kind === 'ObjectId') {
+            return res.status(404).json({ msg: 'Test not found' });
+        }
+        res.status(500).send('Server error');
+    }
+};

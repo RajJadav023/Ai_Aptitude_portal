@@ -19,6 +19,7 @@ const TestEngine = () => {
     const query = new URLSearchParams(location.search);
     const topic = query.get('topic');
     const company = query.get('company');
+    const testId = query.get('testId');
     const limit = query.get('limit') || 20;
 
     const [questions, setQuestions] = useState([]);
@@ -55,7 +56,7 @@ const TestEngine = () => {
             if (savedSession) {
                 const session = JSON.parse(savedSession);
                 // Check if session is still valid (not more than 1 hour old and matches current test params)
-                const isMatch = (session.topic === topic && session.company === company);
+                const isMatch = (session.topic === topic && session.company === company && session.testId === testId);
                 const isRecent = (Date.now() - session.lastStep) < 3600000;
 
                 if (isMatch && isRecent) {
@@ -75,10 +76,15 @@ const TestEngine = () => {
 
         const fetchQuestions = async () => {
             try {
-                const res = await api.get('/questions', {
-                    params: { topic, company, limit }
-                });
-                setQuestions(res.data);
+                if (testId) {
+                    const res = await api.get(`/tests/${testId}`);
+                    setQuestions(res.data.questions_list);
+                } else {
+                    const res = await api.get('/questions', {
+                        params: { topic, company, limit }
+                    });
+                    setQuestions(res.data);
+                }
                 setLoading(false);
             } catch (err) {
                 console.error(err);
