@@ -87,18 +87,10 @@ const CompanyMockGenerator = () => {
         <div className="min-h-screen bg-slate-950 text-slate-200 selection:bg-blue-500/30 font-sans">
             <div className="max-w-4xl mx-auto px-6 py-12 md:py-20">
                 {/* Header */}
-                <div className="text-center mb-16 animate-in fade-in slide-in-from-top-10 duration-700">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-bold mb-6">
-                        <Zap className="w-4 h-4 fill-current" />
-                        Next-Gen AI Mock Engine
-                    </div>
-                    <h1 className="text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">
-                        AI Company <span className="bg-linear-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">Generator</span>
+                <div className="text-center mb-8 animate-in fade-in slide-in-from-top-10 duration-700">
+                    <h1 className="text-3xl md:text-4xl font-black text-white mb-2 tracking-tight">
+                        AI Company <span className="bg-linear-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">Mock Engine</span>
                     </h1>
-                    <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-                        Upload a company paper or patterns. Our AI will extract, generate related questions, 
-                        and mix them with our database to create a personalized high-stakes mock test.
-                    </p>
                 </div>
 
                 {stage === 'upload' && (
