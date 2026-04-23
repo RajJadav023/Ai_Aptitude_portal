@@ -55,7 +55,7 @@ const CompanyMockGenerator = () => {
             const mockRes = await api.post('/ai/create-company-mock', {
                 text: uploadRes.data.text,
                 companyName: companyName,
-                totalCount: 20
+                totalCount: 10
             });
 
             setTestData(mockRes.data);
@@ -188,7 +188,7 @@ const CompanyMockGenerator = () => {
                             </div>
                             <div className="px-4 py-2 rounded-2xl bg-white/5 border border-white/5">
                                 <span className="block text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">Questions</span>
-                                <span className="text-lg font-black text-indigo-400">{testData?.count || 20} Mixed</span>
+                                <span className="text-lg font-black text-indigo-400">{testData?.count || 10} Mixed</span>
                             </div>
                         </div>
 

@@ -231,6 +231,77 @@ const questions = [
         options: ["2", "3", "6", "12"],
         correct_answer: "6",
         topic: "HCF & LCM", difficulty: "Easy", company_name: "Standard", source: "System"
+    },
+    // --- NEWLY ADDED QUESTIONS ---
+    {
+        question_text: "If 'WHITE' is coded as 'XGJSF', how is 'BLACK' coded?",
+        options: ["CKBDL", "AKZBJ", "CMBDL", "AMZBJ"],
+        correct_answer: "CKBDL",
+        explanation: "The pattern is +1, -1, +1, -1, +1. W+1=X, H-1=G, I+1=J, T-1=S, E+1=F. Similarly, B+1=C, L-1=K, A+1=B, C-1=B, K+1=L.",
+        topic: "Logical Reasoning", difficulty: "Medium", company_name: "Accenture", source: "System"
+    },
+    {
+        question_text: "In how many ways can the letters of the word 'LEADER' be arranged?",
+        options: ["72", "144", "360", "720"],
+        correct_answer: "360",
+        explanation: "The word LEADER has 6 letters with 'E' repeating twice. Total arrangements = 6! / 2! = 720 / 2 = 360.",
+        topic: "Permutation & Combination", difficulty: "Medium", company_name: "TCS", source: "System"
+    },
+    {
+        question_text: "The difference between simple and compound interests compounded annually on a certain sum of money for 2 years at 4% per annum is Re. 1. The sum is:",
+        options: ["Rs. 625", "Rs. 630", "Rs. 640", "Rs. 650"],
+        correct_answer: "Rs. 625",
+        explanation: "Difference = P(r/100)^2. 1 = P(4/100)^2 => 1 = P(1/25)^2 => P = 625.",
+        topic: "Compound Interest", difficulty: "Hard", company_name: "Infosys", source: "System"
+    },
+    {
+        question_text: "A man walks 5 km toward south and then turns to the right. After walking 3 km he turns to the left and walks 5 km. Now in which direction is he from the starting place?",
+        options: ["West", "South", "North-East", "South-West"],
+        correct_answer: "South-West",
+        explanation: "The man moves South, then West, then South again. His final position is South-West of the starting point.",
+        topic: "Logical Reasoning", difficulty: "Medium", company_name: "Wipro", source: "System"
+    },
+    {
+        question_text: "Pointing to a lady, a man said, 'The son of her only brother is the brother of my wife.' How is the lady related to the man?",
+        options: ["Mother's sister", "Grandmother", "Sister of father-in-law", "Maternal aunt"],
+        correct_answer: "Sister of father-in-law",
+        explanation: "The son of the lady's brother is the man's wife's brother. This means the lady's brother is the man's father-in-law. So, the lady is the sister of his father-in-law.",
+        topic: "Logical Reasoning", difficulty: "Hard", company_name: "TCS", source: "System"
+    },
+    {
+        question_text: "Three unbiased coins are tossed. What is the probability of getting at most two heads?",
+        options: ["3/4", "1/4", "3/8", "7/8"],
+        correct_answer: "7/8",
+        explanation: "Total outcomes = 2^3 = 8. 'At most two heads' means all outcomes except HHH. So, 7/8.",
+        topic: "Probability", difficulty: "Medium", company_name: "Cognizant", source: "System"
+    },
+    {
+        question_text: "If the total profit of a company in 2022 was $100,000 and it increased by 20% in 2023, and then decreased by 10% in 2024, what is the profit in 2024?",
+        options: ["$110,000", "$108,000", "$112,000", "$105,000"],
+        correct_answer: "$108,000",
+        explanation: "Profit in 2023 = 100,000 * 1.2 = 120,000. Profit in 2024 = 120,000 * 0.9 = 108,000.",
+        topic: "Data Interpretation", difficulty: "Easy", company_name: "Accenture", source: "System"
+    },
+    {
+        question_text: "Choose the word which is most opposite in meaning to the word 'ENORMOUS'.",
+        options: ["Soft", "Average", "Tiny", "Weak"],
+        correct_answer: "Tiny",
+        explanation: "Enormous means huge. Its opposite is tiny.",
+        topic: "Verbal Ability", difficulty: "Easy", company_name: "TCS", source: "System"
+    },
+    {
+        question_text: "Which of the phrases given below should replace the phrase in bold? 'The small child does whatever his father **was done**.'",
+        options: ["has done", "did", "does", "had done"],
+        correct_answer: "does",
+        explanation: "The sentence is in present tense ('does'), so the corresponding action of the father should also be in present tense ('does').",
+        topic: "Verbal Ability", difficulty: "Easy", company_name: "Infosys", source: "System"
+    },
+    {
+        question_text: "Statements: All poets are day-dreamers. All painters are day-dreamers. Conclusions: I. All painters are poets. II. Some day-dreamers are not painters.",
+        options: ["Only conclusion I follows", "Only conclusion II follows", "Neither I nor II follows", "Both I and II follow"],
+        correct_answer: "Neither I nor II follows",
+        explanation: "Both poets and painters are subsets of day-dreamers, but they don't necessarily overlap (I). Conclusion II is not necessarily true from the given statements.",
+        topic: "Logical Reasoning", difficulty: "Medium", company_name: "Capgemini", source: "System"
     }
 ];
 

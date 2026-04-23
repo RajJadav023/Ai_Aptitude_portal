@@ -29,3 +29,10 @@ A) Thursday
 B) Friday
 C) Saturday
 D) Sunday
+
+ANSWERS:
+1. C
+2. A
+3. A
+4. B
+5. D

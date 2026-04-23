@@ -20,7 +20,7 @@ const TestEngine = () => {
     const topic = query.get('topic');
     const company = query.get('company');
     const testId = query.get('testId');
-    const limit = query.get('limit') || 20;
+    const limit = query.get('limit') || 10;
 
     const [questions, setQuestions] = useState([]);
     const [currentIdx, setCurrentIdx] = useState(0);

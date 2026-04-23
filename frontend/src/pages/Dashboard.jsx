@@ -10,7 +10,7 @@ const Dashboard = () => {
     const [companies, setCompanies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
-    const [testLimit, setTestLimit] = useState(20);
+    const [testLimit, setTestLimit] = useState(10);
     const [activeTab, setActiveTab] = useState('companies'); // 'companies' or 'topics'
     const navigate = useNavigate();
 
@@ -124,7 +124,7 @@ const Dashboard = () => {
 
                     {/* Limit Selector */}
                     <div className="flex items-center gap-2 bg-slate-900 border border-white/5 p-2 rounded-2xl">
-                        {[20, 30].map(limit => (
+                        {[10, 20, 30].map(limit => (
                             <button
                                 key={limit}
                                 onClick={() => setTestLimit(limit)}

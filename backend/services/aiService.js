@@ -39,7 +39,8 @@ exports.extractAndGenerateMock = async (rawText, companyName, generateCount = 10
     const prompt = `You are an expert aptitude paper generator. I will provide raw text from a ${companyName} placement paper.
     
     Tasks:
-    1. EXTRACT: Find and format all existing MCQ questions from the text below.
+    1. EXTRACT: Find and format all existing MCQ questions from the text below. 
+       IMPORTANT: If the correct answer or explanation is not in the text, you MUST solve the question yourself to provide the correct answer and a brief explanation.
     2. GENERATE: Create ${generateCount} NEW, UNIQUE questions that follow the exact same pattern, topics, and difficulty found in the text.
     
     Return the response strictly as a JSON object with this structure:
@@ -76,6 +77,7 @@ exports.extractAndGenerateMock = async (rawText, companyName, generateCount = 10
         const result = await retry(() => model.generateContent(prompt));
         const response = await result.response;
         let text = response.text();
+        console.log("AI Response (Combined):", text);
         text = text.replace(/```json/g, '').replace(/```/g, '').trim();
         return JSON.parse(text);
     } catch (err) {
