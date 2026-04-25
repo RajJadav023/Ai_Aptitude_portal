@@ -87,8 +87,8 @@ const CompanyMockGenerator = () => {
         <div className="min-h-screen bg-slate-950 text-slate-200 selection:bg-blue-500/30 font-sans">
             <div className="max-w-4xl mx-auto px-6 py-12 md:py-20">
                 {/* Header */}
-                <div className="text-center mb-8 animate-in fade-in slide-in-from-top-10 duration-700">
-                    <h1 className="text-3xl md:text-4xl font-black text-white mb-2 tracking-tight">
+                <div className="text-center mb-6 animate-in fade-in slide-in-from-top-10 duration-700">
+                    <h1 className="text-2xl md:text-3xl font-black text-white mb-1 tracking-tight">
                         AI Company <span className="bg-linear-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">Mock Engine</span>
                     </h1>
                 </div>
@@ -97,13 +97,13 @@ const CompanyMockGenerator = () => {
                     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-700">
                         {/* Company Name Input */}
                         <div className="relative group">
-                            <Building2 className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-500 group-focus-within:text-blue-500 transition-colors pointer-events-none" />
+                            <Building2 className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-blue-500 transition-colors pointer-events-none" />
                             <input
                                 id="company_name_field"
                                 name="company_name"
                                 type="text"
                                 placeholder="Target Company (e.g. TCS, Google, Infosys)"
-                                className="w-full pl-16 pr-6 py-6 rounded-3xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all text-xl font-bold text-white placeholder:text-slate-600 shadow-2xl"
+                                className="w-full pl-14 pr-5 py-4 rounded-2xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all text-lg font-bold text-white placeholder:text-slate-600 shadow-2xl"
                                 value={companyName}
                                 onChange={(e) => {
                                     setCompanyName(e.target.value);
@@ -113,18 +113,18 @@ const CompanyMockGenerator = () => {
                         </div>
 
                         {/* File Upload Area */}
-                        <div className={`relative overflow-hidden group rounded-4xl border-2 border-dashed transition-all duration-500 ${file ? 'border-blue-500/50 bg-blue-500/5' : 'border-white/10 hover:border-white/20 bg-white/2'}`}>
-                            <label className="flex flex-col items-center justify-center p-16 cursor-pointer">
+                        <div className={`relative overflow-hidden group rounded-3xl border-2 border-dashed transition-all duration-500 ${file ? 'border-blue-500/50 bg-blue-500/5' : 'border-white/10 hover:border-white/20 bg-white/2'}`}>
+                            <label className="flex flex-col items-center justify-center p-10 cursor-pointer">
                                 <input type="file" className="hidden" onChange={handleFileChange} accept=".pdf,.jpg,.jpeg,.png,.txt" />
                                 
-                                <div className={`p-8 rounded-3xl mb-8 transition-all duration-500 ${file ? 'bg-blue-600/20 scale-110 shadow-blue-500/20 shadow-2xl' : 'bg-white/5 group-hover:scale-105'}`}>
-                                    <Upload className={`w-12 h-12 ${file ? 'text-blue-400' : 'text-slate-500'}`} />
+                                <div className={`p-6 rounded-2xl mb-6 transition-all duration-500 ${file ? 'bg-blue-600/20 scale-110 shadow-blue-500/20 shadow-2xl' : 'bg-white/5 group-hover:scale-105'}`}>
+                                    <Upload className={`w-10 h-10 ${file ? 'text-blue-400' : 'text-slate-500'}`} />
                                 </div>
                                 
-                                <span className="text-2xl font-black text-white mb-2">
+                                <span className="text-xl font-black text-white mb-1">
                                     {file ? file.name : 'Drop Paper or Photos'}
                                 </span>
-                                <p className="text-slate-500 font-medium">Click to browse (PDF, PNG, JPG, TXT)</p>
+                                <p className="text-slate-500 font-medium text-sm">Click to browse (PDF, PNG, JPG, TXT)</p>
                             </label>
                             
                             {/* Decorative elements */}
@@ -141,9 +141,9 @@ const CompanyMockGenerator = () => {
 
                         <button
                             onClick={handleGenerate}
-                            className="w-full py-6 rounded-3xl bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xl font-black shadow-2xl shadow-blue-500/30 transition-all active:scale-95 flex items-center justify-center gap-4 group cursor-pointer"
+                            className="w-full py-4 rounded-2xl bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg font-black shadow-2xl shadow-blue-500/30 transition-all active:scale-95 flex items-center justify-center gap-3 group cursor-pointer"
                         >
-                            Generate AI Mock <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                            Generate AI Mock <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                         </button>
                     </div>
                 )}
@@ -175,12 +175,12 @@ const CompanyMockGenerator = () => {
                 )}
 
                 {stage === 'ready' && (
-                    <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-4xl p-12 text-center animate-in zoom-in-95 duration-500">
-                        <div className="w-24 h-24 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-8 border border-green-500/30">
-                            <CheckCircle2 className="w-12 h-12 text-green-400" />
+                    <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 text-center animate-in zoom-in-95 duration-500">
+                        <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6 border border-green-500/30">
+                            <CheckCircle2 className="w-10 h-10 text-green-400" />
                         </div>
                         
-                        <h2 className="text-5xl font-black text-white mb-4">Mock Test Ready!</h2>
+                        <h2 className="text-3xl font-black text-white mb-3">Mock Test Ready!</h2>
                         <div className="flex items-center justify-center gap-4 mb-10">
                             <div className="px-4 py-2 rounded-2xl bg-white/5 border border-white/5">
                                 <span className="block text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">Company</span>
@@ -204,9 +204,9 @@ const CompanyMockGenerator = () => {
 
                         <button
                             onClick={startTest}
-                            className="w-full py-8 rounded-3xl bg-white text-slate-950 text-2xl font-black shadow-2xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-4 group"
+                            className="w-full py-5 rounded-2xl bg-white text-slate-950 text-xl font-black shadow-2xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3 group"
                         >
-                            Start Assessment Now <ChevronRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" />
+                            Start Assessment Now <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </button>
                         
                         <button 

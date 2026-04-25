@@ -188,25 +188,25 @@ const Dashboard = () => {
 
                     {activeTab === 'ai-mock' && (
                         <div className="animate-in fade-in slide-in-from-bottom-5 duration-500">
-                            <div className="p-12 rounded-4xl bg-linear-to-r from-blue-600/20 to-indigo-600/20 border border-blue-500/20 relative overflow-hidden group">
+                            <div className="p-8 rounded-3xl bg-linear-to-r from-blue-600/20 to-indigo-600/20 border border-blue-500/20 relative overflow-hidden group">
                                 <div className="relative z-10">
-                                    <div className="w-16 h-16 rounded-3xl bg-blue-600/20 border border-blue-500/20 flex items-center justify-center mb-8">
-                                        <BrainCircuit className="w-8 h-8 text-blue-400" />
+                                    <div className="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/20 flex items-center justify-center mb-6">
+                                        <BrainCircuit className="w-6 h-6 text-blue-400" />
                                     </div>
-                                    <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest border border-blue-500/20">Active Now</span>
-                                    <h2 className="text-4xl font-black text-white mt-4 mb-4">AI Company Mock Generator</h2>
-                                    <p className="text-slate-400 max-w-xl text-lg mb-10 leading-relaxed">
+                                    <span className="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 text-[10px] font-bold uppercase tracking-widest border border-blue-500/20">Active Now</span>
+                                    <h2 className="text-2xl font-black text-white mt-3 mb-2">AI Company Mock Generator</h2>
+                                    <p className="text-slate-400 max-w-xl text-base mb-6 leading-relaxed">
                                         Upload old placement papers and let our AI extract patterns and generate missing questions 
                                         to create a perfectly tailored company-specific mock test.
                                     </p>
                                     <button 
                                         onClick={() => navigate('/company-mock')}
-                                        className="px-10 py-5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-black text-lg transition-all shadow-xl shadow-blue-500/30 flex items-center gap-3 active:scale-95"
+                                        className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-base transition-all shadow-xl shadow-blue-500/30 flex items-center gap-2 active:scale-95"
                                     >
-                                        Launch AI Mock Engine <ChevronRight className="w-6 h-6" />
+                                        Launch AI Mock Engine <ChevronRight className="w-5 h-5" />
                                     </button>
                                 </div>
-                                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+                                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[400px] h-[400px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
                             </div>
                         </div>
                     )}
