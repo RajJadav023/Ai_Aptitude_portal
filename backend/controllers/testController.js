@@ -2,6 +2,7 @@ const Test = require('../models/Test');
 const Result = require('../models/Result');
 const Question = require('../models/Question');
 const User = require('../models/User');
+const { shuffleArray } = require('../utils/shuffle');
 
 // @route   POST api/tests/submit
 // @desc    Submit test answers and calculate results
@@ -104,7 +105,14 @@ exports.getTestById = async (req, res) => {
             return res.status(401).json({ msg: 'User not authorized' });
         }
 
-        res.json(test);
+        // Randomize options for each question for a fresh experience
+        const testObj = test.toObject();
+        testObj.questions_list = testObj.questions_list.map(q => ({
+            ...q,
+            options: shuffleArray(q.options)
+        }));
+
+        res.json(testObj);
     } catch (err) {
         console.error(err.message);
         if (err.kind === 'ObjectId') {

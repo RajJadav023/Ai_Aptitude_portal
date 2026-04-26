@@ -1,4 +1,5 @@
 const Question = require('../models/Question');
+const { shuffleArray } = require('../utils/shuffle');
 
 // @route   GET api/questions
 // @desc    Get questions based on topic or company
@@ -30,7 +31,19 @@ exports.getQuestions = async (req, res) => {
             questions = [...questions, ...extra];
         }
 
-        res.json(questions);
+        // Shuffle the final list to mix topic-specific and fallback questions
+        // And also shuffle options within each question for maximum randomness
+        const randomizedQuestions = shuffleArray(questions).map(q => {
+            if (q.options && Array.isArray(q.options)) {
+                return {
+                    ...q,
+                    options: shuffleArray(q.options)
+                };
+            }
+            return q;
+        });
+
+        res.json(randomizedQuestions);
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');

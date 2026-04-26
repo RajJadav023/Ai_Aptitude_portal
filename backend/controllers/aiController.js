@@ -1,8 +1,10 @@
 const aiService = require('../services/aiService');
 const Question = require('../models/Question');
 const Test = require('../models/Test');
+const { shuffleArray } = require('../utils/shuffle');
 
 // @route   POST api/ai/generate-mock
+// @desc    Generate a mock test based on topic and difficulty
 exports.generateMock = async (req, res) => {
     const { topic, difficulty, count } = req.body;
 
@@ -15,7 +17,16 @@ exports.generateMock = async (req, res) => {
             source: 'AI-Generated'
         })));
 
-        res.json(savedQuestions);
+        // Shuffle questions and their options before returning
+        const randomizedQuestions = shuffleArray(savedQuestions).map(q => {
+            const questionObj = q.toObject ? q.toObject() : q;
+            return {
+                ...questionObj,
+                options: shuffleArray(questionObj.options)
+            };
+        });
+
+        res.json(randomizedQuestions);
     } catch (err) {
         console.error(err);
         res.status(500).send('Failed to generate mock test');
@@ -88,11 +99,11 @@ exports.createCompanyMock = async (req, res) => {
 
         const dbQuestionIds = dbQuestions.map(q => q._id);
 
-        // Combine
-        const finalQuestionIds = [
+        // Combine and Shuffle Question IDs
+        const finalQuestionIds = shuffleArray([
             ...newQuestionIds.slice(0, targetFromNew),
             ...dbQuestionIds
-        ];
+        ]);
 
         // 5. Create the Test
         const newTest = new Test({
