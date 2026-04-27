@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 
+/**
+ * Mongoose schema for Aptitude Questions.
+ * Supports categorization by topic, difficulty, and optional company tags.
+ */
 const QuestionSchema = new mongoose.Schema({
     question_text: { type: String, required: true },
     options: [{ type: String, required: true }],

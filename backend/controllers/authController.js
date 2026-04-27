@@ -1,8 +1,11 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
-// @route   POST api/auth/register
-// @desc    Register user
+/**
+ * @route   POST api/auth/register
+ * @desc    Handles user registration by hashing password and returning a JWT token
+ * @access  Public
+ */
 exports.register = async (req, res) => {
     const { name, email, password } = req.body;
 
@@ -34,8 +37,11 @@ exports.register = async (req, res) => {
     }
 };
 
-// @route   POST api/auth/login
-// @desc    Authenticate user & get token
+/**
+ * @route   POST api/auth/login
+ * @desc    Authenticates user, verifies credentials and returns a JWT token
+ * @access  Public
+ */
 exports.login = async (req, res) => {
     const { email, password } = req.body;
 
@@ -69,8 +75,11 @@ exports.login = async (req, res) => {
     }
 };
 
-// @route   GET api/auth/user
-// @desc    Get user data
+/**
+ * @route   GET api/auth/user
+ * @desc    Retrieves authenticated user's profile data (excluding password)
+ * @access  Private (requires x-auth-token)
+ */
 exports.getUser = async (req, res) => {
     try {
         const user = await User.findById(req.user.id).select('-password');

@@ -11,6 +11,11 @@ import {
     ArrowRight
 } from 'lucide-react';
 
+/**
+ * UploadPaper Component
+ * Handles OCR-based question extraction from PDF or Image files.
+ * Uses a multi-stage process: Upload -> AI Processing -> Review.
+ */
 const UploadPaper = () => {
     const [file, setFile] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -23,6 +28,11 @@ const UploadPaper = () => {
         setError('');
     };
 
+    /**
+     * Triggers the dual-step extraction pipeline:
+     * 1. OCR text extraction via /upload
+     * 2. AI structuring via /ai/process-upload
+     */
     const handleUpload = async () => {
         if (!file) return;
         setLoading(true);

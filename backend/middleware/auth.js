@@ -1,5 +1,9 @@
 const jwt = require('jsonwebtoken');
 
+/**
+ * Middleware to verify JWT tokens from the 'x-auth-token' header.
+ * Attaches the decoded user ID to the request object.
+ */
 module.exports = function (req, res, next) {
     const token = req.header('x-auth-token');
 
