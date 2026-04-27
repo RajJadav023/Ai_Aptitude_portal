@@ -5,10 +5,18 @@ const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
 
+/**
+ * AuthProvider Component
+ * Manages global authentication state, including user data, login/logout logic,
+ * and automatic session expiration after 30 minutes of inactivity.
+ */
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    /**
+     * Loads user profile from the backend using the stored JWT token.
+     */
     const loadUser = async () => {
         const token = localStorage.getItem('token');
         if (!token) {

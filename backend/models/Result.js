@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 
+/**
+ * Mongoose schema for Test Results.
+ * Tracks user performance, scores, and topic-wise breakdown.
+ */
 const ResultSchema = new mongoose.Schema({
     user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     test_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Test', required: true },
